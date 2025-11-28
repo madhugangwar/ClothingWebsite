@@ -1,0 +1,38 @@
+.whatsapp-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #0ff175;
+  color: white;
+  font-size: 1.8rem;
+  padding: 12px;
+  border-radius: 50%;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  z-index: 999;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.back-to-top-btn:hover, .whatsapp-btn:hover {
+  opacity: 0.85;
+}
+          .text-primary {
+    color: rgb(13 38 253) !important;
+}
+.bg-info {
+    --bs-bg-opacity: 1;
+    background-color:rgb(9, 236, 88) !important;
+}

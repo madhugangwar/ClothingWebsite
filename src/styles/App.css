@@ -1,0 +1,234 @@
+
+
+:root {
+            --primary-deep: #0d3b66; 
+            --accent-yellow: #f4d35e; 
+            --light-cream: #faf0ca; 
+            --secondary-cream: #e5e0c6; 
+            
+            /* Bootstrap Override - Primary uses Deep Blue */
+            --bs-primary: var(--primary-deep);
+            --bs-primary-rgb: 13, 59, 102;
+            
+            /* Bootstrap Override - Info/Accent uses Yellow */
+            --bs-info: var(--accent-yellow);
+            --bg-info : rgb(10, 243, 92) !important;
+          }
+          /* .text-primary {
+    color: rgb(195, 197, 214) !important;
+}
+.bg-info {
+    --bs-bg-opacity: 1;
+    background-color:rgb(9, 236, 88) !important;
+} */
+
+          /* Define color variables globally for light/dark mode */
+          .light-mode {
+            --bs-body-bg: var(--light-cream) !important; /* Light Cream Background */
+            --bs-body-color: var(--primary-deep) !important; 
+            --card-bg: #ffffff; /* Keep cards slightly whiter */
+            --secondary-bg-custom: var(--secondary-cream); /* Custom secondary background */
+            --input-bg: #ffffff;
+            --input-color: var(--primary-deep);
+            
+            transition: all 0.4s ease-in-out;
+          }
+          .dark-mode {
+            --bs-body-bg: #1a1a1a; /* Very Dark Grey */
+            --bs-body-color: #f8f9fa; /* Light text */
+            --card-bg: #2d2d2d; /* Slightly lighter dark card */
+            --secondary-bg-custom: #343a40; /* Bootstrap dark grey */
+            --input-bg: #343a40;
+            --input-color: #ffffff;
+            
+            /* Dark Mode Overrides for visibility */
+            --bs-primary: #13273a; /* Lighter blue for better contrast on dark bg */
+            --bs-info: #ffc107; /* Lighter yellow for better contrast on dark bg */
+            
+            /* General text color for dark mode */
+            color: var(--bs-body-color) !important;
+            
+            transition: all 0.4s ease-in-out;
+          }
+          
+          /* Apply variables to core elements */
+          body {
+            font-family: 'Inter', sans-serif; /* Retaining Inter font */
+            background-color: var(--bs-body-bg) !important;
+            color: var(--bs-body-color) !important;
+          }
+          .card-dark { /* Custom class for dark cards */
+              background-color: var(--card-bg) !important;
+              color: var(--bs-body-color) !important;
+          }
+          .list-group-item-dark { /* Custom class for dark list items */
+              background-color: var(--card-bg) !important;
+              color: var(--bs-body-color) !important;
+              border-color: rgba(255, 255, 255, 0.125) !important;
+          }
+          .input-dark {
+              background-color: rgb(29, 27, 27) !important;
+              color: rgb(245, 245, 245) !important;
+          }
+          .bg-secondary-custom {
+              background-color: var(--secondary-cream) !important;
+          }
+          .dark-mode .bg-secondary-custom {
+              background-color: #343a40 !important;
+          }
+          
+          /* Dark Mode Button text visibility */
+          .dark-mode .btn-outline-primary-dark {
+              color: #ffc107;
+              border-color:  #ffc107;
+          }
+          .dark-mode .btn-outline-info-dark {
+              color: var(--bs-info);
+              border-color: var(--bs-info);
+          }
+          .dark-mode .btn-outline-danger {
+              color: #dc3545;
+              border-color: #dc3545;
+          }
+          
+          /* Custom Product Card Hover Effect */
+          .card-product {
+             transition: transform 0.3s, box-shadow 0.3s;
+             border: 1px solid rgba(0, 0, 0, 0.05);
+          }
+          .dark-mode .card-product {
+             border: 1px solid rgba(255, 255, 255, 0.1);
+          }
+          .card-product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+          }
+
+          /* --- PURE CSS SLIDER FIX --- */
+          
+          .css-slider-container {
+              overflow: hidden;
+              width: 100%;
+              max-height: 400px;
+          }
+          
+          .css-slider-track {
+              display: flex;
+              width: 400%; /* 3 slides + 1 duplicate for infinite loop visual */
+              animation: slide-animation 12s infinite; /* 3s per slide * 4 slides = 12s cycle */
+          }
+          
+          .css-slider-slide {
+              width: 25%; /* 100% / 4 slides */
+              flex-shrink: 0;
+              background-size: cover;
+              background-position: center;
+              height: 400px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              background-color: var(--primary-deep); /* Fallback */
+          }
+          
+          .slide-caption {
+              background: rgba(0, 0, 0, 0.6);
+              color: white;
+              padding: 10px 20px;
+              border-radius: 5px;
+              text-align: center;
+          }
+
+          @keyframes slide-animation {
+              0% { transform: translateX(0%); }
+              25% { transform: translateX(0%); } /* Slide 1 visible */
+              33% { transform: translateX(-25%); }
+              58% { transform: translateX(-25%); } /* Slide 2 visible */
+              66% { transform: translateX(-50%); }
+              91% { transform: translateX(-50%); } /* Slide 3 visible */
+              100% { transform: translateX(-75%); } /* Transition to duplicate 1, then restart */
+          }
+          
+          /* --- UTILITY ICONS --- */
+          .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1050;
+             background-color: #0ff175 !important; 
+          }
+          
+          .back-to-top-icon {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 1050;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+          }
+          .back-to-top-icon.visible {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          /* CUSTOM HEADER COLORS */
+.bg-custom-primary {
+  background-color: #0d3b66 !important; /* Deep Blue */
+}
+
+.brand-title {
+  color: #f4d35e !important; /* Yellow */
+}
+
+.nav-normal {
+  color: #ffffff !important; /* normal white text */
+}
+
+.nav-active {
+  color: #f4d35e !important; /* Yellow active state */
+  border-bottom: 2px solid #f4d35e;
+}
+
+/* Theme toggle button color in light mode */
+.text-custom-accent {
+  color: #f4d35e !important;
+}
+.heart-icon {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.liked-heart {
+  color: red !important;
+}
+
+.unliked-heart {
+  color: #888 !important;
+}
+
+.dark-mode .unliked-heart {
+  color: #ccc !important;
+}
+
+.btn-cart {
+  background-color: #0d3b66 !important;
+  color: white !important;
+  border-radius: 50px;
+  border: none;
+}
+.pro-info{
+  background:  #f4d35e;
+}
+
+.head-colr{
+  color: #0d3b66;
+}
+.dark-mode .head-colr{
+  color: #f4d35e;
+}
+
+
+
+
+
