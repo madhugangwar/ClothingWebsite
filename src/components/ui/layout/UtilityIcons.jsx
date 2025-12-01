@@ -1,4 +1,3 @@
-// Component: UtilityIcons (Simulated: src/components/layout/UtilityIcons.jsx)
 
 import { useState,useEffect } from "react";
 const UtilityIcons = () => {
@@ -19,18 +18,17 @@ const UtilityIcons = () => {
 
     return (
         <>
-            {/* WhatsApp Icon (Accent Yellow/Info color) */}
+    
             <a 
                 href="https://wa.me/919876543210" 
-                className="btn bg-info rounded-circle shadow-lg p-3 whatsapp-icon text-primary" 
+                className="btn  rounded-circle shadow-lg p-3 whatsapp-icon " 
                 target="_blank" 
                 rel="noopener noreferrer"
                 title="Chat on WhatsApp"
             >
-                <i className="bi bi-whatsapp h4 m-0"></i>
+                <i className="bi bi-whatsapp h3 m-0"></i>
             </a>
 
-            {/* Back to Top Icon (Primary Blue) */}
             <button 
                 className={`btn btn-primary rounded-circle shadow-lg p-3 back-to-top-icon ${isVisible ? 'visible' : 'hidden'}`}
                 onClick={scrollToTop}

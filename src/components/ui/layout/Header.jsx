@@ -1,10 +1,11 @@
-// =========================
-// UPDATED HEADER COMPONENT
-// =========================
+
+import React, { useState } from "react";
+import "../../../styles/Header.css";
+
 
 const Header = ({ page, cartCount, wishlistCount, handleNavClick, theme, toggleTheme }) => {
-
   const isDark = theme === "dark";
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav
@@ -14,21 +15,36 @@ const Header = ({ page, cartCount, wishlistCount, handleNavClick, theme, toggleT
     >
       <div className="container-fluid d-flex flex-wrap justify-content-between">
 
-        {/* Brand */}
         <button
-          className="navbar-brand btn btn-link text-decoration-none"
+          className="navbar-brand btn  btn-link text-decoration-none"
           onClick={() => handleNavClick("Home")}
           style={{ background: "transparent", border: "none" }}
         >
-          <span className="fw-bold brand-title" style={{ fontSize: "1.6rem" }}>
+          <span className="fw-bold brand-title" style={{ fontSize: "1.6rem"}}>
             TrendyThreads
-          </span>
+          </span>     
+      
+          <button
+            className={`btn btn-sm ms-lg-2 mt-3 mt-lg-0 ${
+              isDark ? "text-warning" : "text-custom-accent"
+            }`}
+            onClick={toggleTheme}
+          >
+            <i className={`bi ${isDark ? "bi-sun-fill" : "bi-moon-stars-fill"} h4 mb-0`}></i>
+          </button>
+
+
+        </button>
+        
+        <button
+          className="burger-btn d-lg-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <i className={`bi ${menuOpen ? "bi-x-lg" : "bi-list"} h3`}></i>
         </button>
 
-        {/* Nav Links */}
-        <div className="d-flex align-items-center">
-          <ul className="navbar-nav d-flex flex-row flex-wrap justify-content-end me-2">
-
+        <div className={`menu-container ${menuOpen ? "open" : ""}`}>
+          <ul className="navbar-nav flex-column flex-lg-row align-items-lg-center me-2">
             {[
               { name: "Home", page: "Home" },
               { name: "About Us", page: "About Us" },
@@ -36,20 +52,19 @@ const Header = ({ page, cartCount, wishlistCount, handleNavClick, theme, toggleT
               { name: "Cart", page: "Cart", count: cartCount },
               { name: "Contact", page: "Contact" },
             ].map((link) => (
-              <li className="nav-item me-2" key={link.page}>
+              <li className="nav-item me-lg-2 my-2 my-lg-0" key={link.page}>
                 <button
-                  onClick={() => handleNavClick(link.page)}
+                  onClick={() => {
+                    handleNavClick(link.page);
+                    setMenuOpen(false);
+                  }}
                   className={`nav-link px-2 py-1 text-decoration-none ${
                     page === link.page ? "nav-active fw-bold" : "nav-normal"
                   } position-relative`}
-                  style={{
-                    background: "transparent",
-                    border: "none",
-                  }}
+                  style={{ background: "transparent", border: "none" }}
                 >
                   {link.name}
 
-                  {/* Badge Count */}
                   {link.count > 0 && (
                     <span
                       className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
@@ -63,19 +78,6 @@ const Header = ({ page, cartCount, wishlistCount, handleNavClick, theme, toggleT
             ))}
           </ul>
 
-          {/* Theme Toggle */}
-          <button
-            className={`btn btn-sm ms-2 ${
-              isDark ? "text-warning" : "text-custom-accent"
-            }`}
-            onClick={toggleTheme}
-          >
-            <i
-              className={`bi ${
-                isDark ? "bi-sun-fill" : "bi-moon-stars-fill"
-              } h5 mb-0`}
-            ></i>
-          </button>
         </div>
       </div>
     </nav>

@@ -1,10 +1,9 @@
 import React from 'react';
-import PRODUCTS_DATA from './productData'; // make sure path is correct
+import PRODUCTS_DATA from './productData'; 
 
 const WishlistPage = ({ wishlist, toggleWishlist, addToCart, handleNavClick, theme }) => {
   const cardClass = theme === 'dark' ? 'list-group-item-dark' : 'bg-light text-dark';
 
-  // Convert wishlist IDs to product objects
   const wishlistProducts = PRODUCTS_DATA.filter(product => wishlist.includes(product.id));
 
   return (

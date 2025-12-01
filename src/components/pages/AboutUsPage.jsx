@@ -1,4 +1,4 @@
-// Component: AboutUsPage (Simulated: src/components/pages/AboutUsPage.jsx)
+
 const AboutUsPage = ({ theme }) => {
     const themeClass = theme === 'dark' ? 'card-dark text-white' : 'bg-white text-dark';
     return (

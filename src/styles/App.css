@@ -6,62 +6,48 @@
             --light-cream: #faf0ca; 
             --secondary-cream: #e5e0c6; 
             
-            /* Bootstrap Override - Primary uses Deep Blue */
             --bs-primary: var(--primary-deep);
             --bs-primary-rgb: 13, 59, 102;
             
-            /* Bootstrap Override - Info/Accent uses Yellow */
             --bs-info: var(--accent-yellow);
             --bg-info : rgb(10, 243, 92) !important;
           }
-          /* .text-primary {
-    color: rgb(195, 197, 214) !important;
-}
-.bg-info {
-    --bs-bg-opacity: 1;
-    background-color:rgb(9, 236, 88) !important;
-} */
-
-          /* Define color variables globally for light/dark mode */
+         
           .light-mode {
-            --bs-body-bg: var(--light-cream) !important; /* Light Cream Background */
+            --bs-body-bg: var(--light-cream) !important; 
             --bs-body-color: var(--primary-deep) !important; 
-            --card-bg: #ffffff; /* Keep cards slightly whiter */
-            --secondary-bg-custom: var(--secondary-cream); /* Custom secondary background */
+            --card-bg: #ffffff; 
+            --secondary-bg-custom: var(--secondary-cream); 
             --input-bg: #ffffff;
             --input-color: var(--primary-deep);
             
             transition: all 0.4s ease-in-out;
           }
           .dark-mode {
-            --bs-body-bg: #1a1a1a; /* Very Dark Grey */
-            --bs-body-color: #f8f9fa; /* Light text */
-            --card-bg: #2d2d2d; /* Slightly lighter dark card */
-            --secondary-bg-custom: #343a40; /* Bootstrap dark grey */
+            --bs-body-bg: #1a1a1a; 
+            --bs-body-color: #f8f9fa; 
+            --card-bg: #2d2d2d;
+            --secondary-bg-custom: #343a40; 
             --input-bg: #343a40;
             --input-color: #ffffff;
             
-            /* Dark Mode Overrides for visibility */
-            --bs-primary: #13273a; /* Lighter blue for better contrast on dark bg */
-            --bs-info: #ffc107; /* Lighter yellow for better contrast on dark bg */
-            
-            /* General text color for dark mode */
+            --bs-primary: #13273a; 
+            --bs-info: #ffc107; 
             color: var(--bs-body-color) !important;
             
             transition: all 0.4s ease-in-out;
           }
           
-          /* Apply variables to core elements */
           body {
-            font-family: 'Inter', sans-serif; /* Retaining Inter font */
+            font-family: 'Inter', sans-serif; 
             background-color: var(--bs-body-bg) !important;
             color: var(--bs-body-color) !important;
           }
-          .card-dark { /* Custom class for dark cards */
+          .card-dark { 
               background-color: var(--card-bg) !important;
               color: var(--bs-body-color) !important;
           }
-          .list-group-item-dark { /* Custom class for dark list items */
+          .list-group-item-dark { 
               background-color: var(--card-bg) !important;
               color: var(--bs-body-color) !important;
               border-color: rgba(255, 255, 255, 0.125) !important;
@@ -77,7 +63,6 @@
               background-color: #343a40 !important;
           }
           
-          /* Dark Mode Button text visibility */
           .dark-mode .btn-outline-primary-dark {
               color: #ffc107;
               border-color:  #ffc107;
@@ -91,7 +76,6 @@
               border-color: #dc3545;
           }
           
-          /* Custom Product Card Hover Effect */
           .card-product {
              transition: transform 0.3s, box-shadow 0.3s;
              border: 1px solid rgba(0, 0, 0, 0.05);
@@ -104,7 +88,6 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
           }
 
-          /* --- PURE CSS SLIDER FIX --- */
           
           .css-slider-container {
               overflow: hidden;
@@ -114,12 +97,12 @@
           
           .css-slider-track {
               display: flex;
-              width: 400%; /* 3 slides + 1 duplicate for infinite loop visual */
-              animation: slide-animation 12s infinite; /* 3s per slide * 4 slides = 12s cycle */
+              width: 400%; 
+              animation: slide-animation 12s infinite; 
           }
           
           .css-slider-slide {
-              width: 25%; /* 100% / 4 slides */
+              width: 25%; 
               flex-shrink: 0;
               background-size: cover;
               background-position: center;
@@ -128,7 +111,7 @@
               align-items: center;
               justify-content: center;
               position: relative;
-              background-color: var(--primary-deep); /* Fallback */
+              background-color: var(--primary-deep); 
           }
           
           .slide-caption {
@@ -141,21 +124,20 @@
 
           @keyframes slide-animation {
               0% { transform: translateX(0%); }
-              25% { transform: translateX(0%); } /* Slide 1 visible */
+              25% { transform: translateX(0%); } 
               33% { transform: translateX(-25%); }
-              58% { transform: translateX(-25%); } /* Slide 2 visible */
+              58% { transform: translateX(-25%); } 
               66% { transform: translateX(-50%); }
-              91% { transform: translateX(-50%); } /* Slide 3 visible */
-              100% { transform: translateX(-75%); } /* Transition to duplicate 1, then restart */
+              91% { transform: translateX(-50%); } 
+              100% { transform: translateX(-75%); } 
           }
           
-          /* --- UTILITY ICONS --- */
           .whatsapp-icon {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 1050;
-             background-color: #0ff175 !important; 
+             background-color: #08f53b !important; 
           }
           
           .back-to-top-icon {
@@ -172,25 +154,23 @@
             visibility: visible;
           }
 
-          /* CUSTOM HEADER COLORS */
 .bg-custom-primary {
-  background-color: #0d3b66 !important; /* Deep Blue */
+  background-color: #0d3b66 !important; 
 }
 
 .brand-title {
-  color: #f4d35e !important; /* Yellow */
+  color: #f4d35e !important; 
 }
 
 .nav-normal {
-  color: #ffffff !important; /* normal white text */
+  color: #ffffff !important; 
 }
 
 .nav-active {
-  color: #f4d35e !important; /* Yellow active state */
+  color: #f4d35e !important; 
   border-bottom: 2px solid #f4d35e;
 }
 
-/* Theme toggle button color in light mode */
 .text-custom-accent {
   color: #f4d35e !important;
 }
@@ -226,6 +206,29 @@
 }
 .dark-mode .head-colr{
   color: #f4d35e;
+}
+
+
+.hero-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .hero-section img {
+    height: 250px;  
+    object-fit: cover;   
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slide,
+  .hero-slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
 }
 
 
