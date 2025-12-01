@@ -20,7 +20,7 @@ const UtilityIcons = () => {
         <>
     
             <a 
-                href="https://wa.me/919876543210" 
+                href="https://wa.me/919870000103" 
                 className="btn  rounded-circle shadow-lg p-3 whatsapp-icon " 
                 target="_blank" 
                 rel="noopener noreferrer"

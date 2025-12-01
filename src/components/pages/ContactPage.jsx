@@ -23,8 +23,8 @@ const ContactPage = ({ theme }) => {
                 }`}
               >
                 <i className="bi bi-geo-alt-fill me-2 text-danger"></i>
-                <strong>Address:</strong> 123, Fashion Street, Commercial Hub,
-                New Delhi, India 110001
+                <strong>Address:</strong> 123, Fashion Street, Shaniwar Wada,
+                Pune Maharastra, India 411031
               </li>
               <li
                 className={`list-group-item ${
@@ -32,7 +32,7 @@ const ContactPage = ({ theme }) => {
                 }`}
               >
                 <i className="bi bi-telephone-fill me-2 text-primary"></i>
-                <strong>Phone:</strong> +91 98765 43210
+                <strong>Phone:</strong> +91 9870000103
               </li>
               <li
                 className={`list-group-item ${
@@ -40,7 +40,7 @@ const ContactPage = ({ theme }) => {
                 }`}
               >
                 <i className="bi bi-envelope-fill me-2 text-info"></i>
-                <strong>Email:</strong> support@ekclothing.in
+                <strong>Email:</strong> support@TrendyThreads.in
               </li>
             </ul>
           </div>
