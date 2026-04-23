@@ -1,4 +1,3 @@
-
 import ProductCard from "../ui/ProductCard";
 
 const HomePage = ({
@@ -29,11 +28,25 @@ const HomePage = ({
   return (
     <main className="container-fluid py-5">
 
+      {/* ✅ CHANGE 1 — H1 tag add kiya (Google padh lega, user ko nahi dikhega) */}
+      <h1 style={{
+        position: 'absolute',
+        width: '1px',
+        height: '1px',
+        overflow: 'hidden',
+        clip: 'rect(0,0,0,0)'
+      }}>
+        Trendy Clothes for Men, Women & Children in India | Trending Threads
+      </h1>
+
       <div className="css-slider-container mb-5 rounded-3 shadow-lg">
         <div className="css-slider-track">
 
+          {/* ✅ CHANGE 2 & 3 — role="img" aur aria-label add kiya har slide mein */}
           <div
             className="css-slider-slide"
+            role="img"
+            aria-label="Trending Threads - latest fashion collection for men and women in India"
             style={{
               backgroundImage: "url(https://img.pikbest.com/origin/10/10/31/97vpIkbEsTShb.jpg!w700wp)"
             }}
@@ -41,6 +54,8 @@ const HomePage = ({
 
           <div
             className="css-slider-slide"
+            role="img"
+            aria-label="Hand drawn fashion collection - trendy clothes for all seasons"
             style={{
               backgroundImage: "url(https://img.freepik.com/free-vector/hand-drawn-fashion-collection-twitch-banner_23-2149985384.jpg?semt=ais_hybrid&w=740&q=80)"
             }}
@@ -48,14 +63,17 @@ const HomePage = ({
 
           <div
             className="css-slider-slide"
+            role="img"
+            aria-label="Modern fashion sale banner - best deals on trendy clothing in India"
             style={{
               backgroundImage: "url(https://marketplace.canva.com/EAGHC5NUD-Q/1/0/1600w/canva-black-and-white-modern-fashion-sale-banner-landscape-n7GVeIDu0Tg.jpg)"
             }}
           />
 
-        
           <div
             className="css-slider-slide"
+            role="img"
+            aria-label="Fashion clothing shop - affordable trendy clothes for men women and children"
             style={{
               backgroundImage: "url(https://cdn.vectorstock.com/i/500p/19/21/fashion-clothing-shop-banner-vector-15001921.jpg)"
             }}
@@ -124,7 +142,7 @@ const HomePage = ({
         </div>
       </div>
 
-      <h2 className="text-center mb-4 mt-5 ">
+      <h2 className="text-center mb-4 mt-5">
         Featured Products ({filteredProducts.length})
       </h2>
 
@@ -155,4 +173,3 @@ const HomePage = ({
 };
 
 export default HomePage;
-
